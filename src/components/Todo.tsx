@@ -98,7 +98,7 @@ export const Todo: FC<iProps> = ({
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     <button>
-                      <Link to={`/name=${el.name}`}>Modifier</Link>
+                      <Link to={`/?name=${el.name}`}>Modifier</Link>
                     </button>
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
