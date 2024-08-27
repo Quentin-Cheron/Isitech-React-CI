@@ -6,15 +6,15 @@ import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 
 // Form Messages
-import { FormError } from "../components/FormMessage/FormError";
-import { FormSuccess } from "../components/FormMessage/FormSuccess";
+// import { FormError } from "../components/FormMessage/FormError";
+// import { FormSuccess } from "../components/FormMessage/FormSuccess";
 
 import { Todo } from "../components/Todo";
 import { ArrayProps } from "../types/Array";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
   const [array, setArray] = useState<ArrayProps[]>([]);
 
   const [searchParams] = useSearchParams();
@@ -25,7 +25,7 @@ function Home() {
   const onAdd = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (inputValue.length === 0) {
-      setError(true);
+      // setError(true);
       return;
     }
     setInputValue("");
@@ -37,13 +37,13 @@ function Home() {
         isDone: false,
       },
     ]);
-    setError(false);
+    // setError(false);
   };
 
   const onUpdate = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (inputValue.length === 0) {
-      setError(true);
+      // setError(true);
       return;
     }
     const newArray = array.map((el) => {
@@ -59,7 +59,7 @@ function Home() {
     setInputValue("");
     navigate("/");
     setArray(newArray);
-    setError(false);
+    // setError(false);
   };
 
   const onDelete = (element: ArrayProps) => {
@@ -71,7 +71,7 @@ function Home() {
 
   useEffect(() => {
     if (inputValue.length > 0) {
-      setError(false);
+      // setError(false);
     }
   }, [inputValue]);
 
