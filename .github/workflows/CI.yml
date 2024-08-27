@@ -5,7 +5,7 @@ on:
   pull_request:
 jobs:
   run-static-codebase-analysis:
-    runs-one: ubuntu-latest
+    run-one: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
