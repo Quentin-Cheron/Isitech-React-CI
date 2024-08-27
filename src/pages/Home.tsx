@@ -88,7 +88,7 @@ function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center px-6 py-12 bg-gray-50 sm:px-12 sm:py-16">
-      <h1 className="text-4xl mb-5">Welcome to Todo App</h1>
+      <h1 className="text-4xl mb-5">Bienvenue sur l'application Todo</h1>
       <form className="w-1/2 grid grid-cols-[1fr,100px] gap-4 items-end">
         <Input
           id="todo"
