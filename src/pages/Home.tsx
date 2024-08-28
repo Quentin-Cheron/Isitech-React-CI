@@ -111,7 +111,7 @@ function Home() {
         Nombre d'éléments sélectionnés: {array.filter((el) => el.isDone).length}
       </p>
 
-      <div data-testid="list">
+      <div className="w-1/2" data-testid="list">
         <Todo
           array={array}
           setInputValue={setInputValue}
