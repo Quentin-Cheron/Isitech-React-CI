@@ -12,19 +12,22 @@ jobs:
         run: npm i
       - name: Run linter
         run: npm run lint
-      - name: Run formatter
-        run: npm run format
-      - name: Run type checker
-        run: npm run type-check
-  run-static-codebase-analysis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name : Install dependencies
-        run: npm i
-      - name: Run Test suite
-        run: npm run test
-      - name: Install playwright browsers
-        run: npx playwright install --with-deps
-      - name: Run E2E tests
-        run: npm run e2e
+  jobs:
+    run-static-codebase-analysis:
+      steps:
+        - name: Run formatter
+          run: npm run format
+        - name: Run type checker
+          run: npm run type-check
+    run-test-suite:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Install dependencies
+          run: npm i
+        - name: Run Test suite
+          run: npm run test
+        - name: Install playwright browsers
+          run: npx playwright install --with-deps
+        - name: Run E2E tests
+          run: npm run e2e
