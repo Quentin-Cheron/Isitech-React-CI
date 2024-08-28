@@ -10,12 +10,7 @@ type iProps = {
   setArray: Dispatch<SetStateAction<ArrayProps[]>>;
 };
 
-export const Todo: FC<iProps> = ({
-  array,
-  setInputValue,
-  onDelete,
-  setArray,
-}) => {
+const Todo: FC<iProps> = ({ array, setInputValue, onDelete, setArray }) => {
   const [searchParams] = useSearchParams();
 
   const name = searchParams.get("name");
@@ -90,7 +85,10 @@ export const Todo: FC<iProps> = ({
                       onChange={(e) => onhandleChecked(e, el)}
                     />
                   </td>
-                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                  <td
+                    className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
+                    data-testid="name"
+                  >
                     {el.name}
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
@@ -113,3 +111,5 @@ export const Todo: FC<iProps> = ({
     </div>
   );
 };
+
+export default Todo;

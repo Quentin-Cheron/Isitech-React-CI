@@ -9,7 +9,7 @@ import { Input } from "../components/Input";
 // import { FormError } from "../components/FormMessage/FormError";
 // import { FormSuccess } from "../components/FormMessage/FormSuccess";
 
-import { Todo } from "../components/Todo";
+import Todo from "../components/Todo";
 import { ArrayProps } from "../types/Array";
 
 function Home() {
@@ -111,12 +111,14 @@ function Home() {
         Nombre d'éléments sélectionnés: {array.filter((el) => el.isDone).length}
       </p>
 
-      <Todo
-        array={array}
-        setInputValue={setInputValue}
-        onDelete={onDelete}
-        setArray={setArray}
-      />
+      <div data-testid="list">
+        <Todo
+          array={array}
+          setInputValue={setInputValue}
+          onDelete={onDelete}
+          setArray={setArray}
+        />
+      </div>
     </main>
   );
 }
